@@ -1,0 +1,29 @@
+1. mkdir
+$ mkdir FI_pyClass
+$cd FI_pyClass
+
+2. download data
+$ wget http://data.vision.ee.ethz.ch/cvl/food101.tar.gz
+$ tar xzf food101.tar.gz
+
+3.download Inception v3
+$ wget https://github.com/code009140566/Food_Identify-python/blob/master/py/retrain.py
+
+4.enter virtual environment
+$ source activate IF_py
+
+5.learning
+$ python retrain.py \
+  --bottleneck_dir=bottlenecks \
+  --model_dir=inception \
+  --learning_rate=0.5 \
+  --summaries_dir=training_summaries/long \
+  --output_graph=retrained_graph.pb \
+  --output_labels=retrained_labels.txt \
+  --image_dir=food101
+  
+  6.download identify py
+  $ wget https://github.com/code009140566/Food_Identify-python/blob/master/py/label_image.py
+  
+  7. identify
+  $ python label_image.py I_food.jpg
