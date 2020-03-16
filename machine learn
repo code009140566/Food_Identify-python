@@ -3,4 +3,10 @@
 $ mkdir FI_pyClass
 $cd FI_pyClass
 
-2.
+2. download data
+
+$ wget http://data.vision.ee.ethz.ch/cvl/food101.tar.gz
+$ tar xzf food101.tar.gz
+
+3.download Inception v3
+
